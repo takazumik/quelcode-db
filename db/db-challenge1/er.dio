@@ -1,6 +1,6 @@
-<mxfile host="" modified="2020-06-11T07:58:39.863Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.46.0 Chrome/78.0.3904.130 Electron/7.3.1 Safari/537.36" etag="TOTXPLsGhm624fl7C575" version="13.1.3">
+<mxfile host="" modified="2020-06-11T10:20:11.014Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.46.0 Chrome/78.0.3904.130 Electron/7.3.1 Safari/537.36" etag="BfG0yP3IoEL7NpBRqxOJ" version="13.1.3">
     <diagram id="6hGFLwfOUW9BJ-s0fimq" name="Page-1">
-        <mxGraphModel dx="1210" dy="995" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1329" dy="995" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -25,7 +25,7 @@
                 <mxCell id="20" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px&quot;&gt;タスクテーブル&lt;br&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" parent="1" vertex="1">
                     <mxGeometry x="462" y="540" width="140" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="23" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERzeroToMany;startFill=1;endArrow=ERzeroToOne;endFill=1;endSize=10;startSize=10;" parent="1" source="4" edge="1">
+                <mxCell id="23" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;startFill=0;endArrow=ERzeroToMany;endFill=1;endSize=10;startSize=10;" parent="1" source="4" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="259" y="343" as="targetPoint"/>
                     </mxGeometry>
@@ -39,20 +39,8 @@
                 <mxCell id="11" value="チャットルームID" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=left;perimeterSpacing=3;spacingLeft=10;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="530" y="220" width="210" height="260" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="チャットルーム名&#10;概要&#10;ファイル送信制御&#10;ファイル名&#10;ダイレクトチャットフラグ&#10;論理削除&#10;作成日&#10;変更日&#10;作成者ID&#10;更新者ID&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" parent="11" vertex="1">
+                <mxCell id="12" value="チャットルーム名&#10;概要&#10;ファイル送信制御&#10;ダイレクトチャットフラグ&#10;削除フラグ&#10;作成日&#10;変更日&#10;作成者ID&#10;更新者ID&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" parent="11" vertex="1">
                     <mxGeometry y="26" width="210" height="234" as="geometry"/>
-                </mxCell>
-                <mxCell id="24" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERzeroToOne;startFill=1;endArrow=ERzeroToMany;endFill=1;entryX=0.005;entryY=0.423;entryDx=0;entryDy=0;entryPerimeter=0;endSize=10;startSize=10;" parent="1" target="12" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="472" y="345" as="sourcePoint"/>
-                        <mxPoint x="531" y="342" as="targetPoint"/>
-                        <Array as="points"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="21">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="635" y="490" as="targetPoint"/>
-                    </mxGeometry>
                 </mxCell>
                 <mxCell id="21" value="タスクID" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=left;perimeterSpacing=3;spacingLeft=10;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="530" y="567" width="210" height="240" as="geometry"/>
@@ -66,15 +54,21 @@
                 <mxCell id="16" value="チャットルームID　　FK&#10;チャットメッセージ&#10;ファイル名&#10;削除フラグ&#10;投稿日&#10;変更日&#10;投稿者ID&#10;更新者ID" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=10;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=16;" parent="15" vertex="1">
                     <mxGeometry y="26" width="210" height="194" as="geometry"/>
                 </mxCell>
-                <mxCell id="31" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERzeroToMany;startFill=1;startSize=10;endArrow=ERzeroToOne;endFill=1;endSize=10;" parent="1" source="12" target="21" edge="1">
+                <mxCell id="31" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;startSize=10;endArrow=ERzeroToMany;endFill=1;endSize=10;" parent="1" source="12" target="21" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="635" y="544" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="40" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.01;entryY=0.466;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERzeroToOne;startFill=1;startSize=10;endArrow=ERzeroToMany;endFill=1;endSize=10;exitX=0.005;exitY=0.562;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+                <mxCell id="40" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.01;entryY=0.466;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERzeroToMany;startFill=1;startSize=10;endArrow=ERone;endFill=0;endSize=10;exitX=0.005;exitY=0.562;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="811.05" y="342.028" as="sourcePoint"/>
-                        <mxPoint x="742.0999999999999" y="342.0440000000001" as="targetPoint"/>
+                        <mxPoint x="810" y="343.99800000000005" as="sourcePoint"/>
+                        <mxPoint x="741.05" y="344.0140000000001" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.295;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;endArrow=ERoneToMany;endFill=0;endSize=10;startSize=10;" edge="1" parent="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="530" y="344.34509259259266" as="sourcePoint"/>
+                        <mxPoint x="473" y="343.9950000000001" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
