@@ -45,7 +45,7 @@ CREATE TABLE chats (
 CREATE TABLE tasks (
     task_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
     chatroom_id INTEGER(11) NOT NULL REFERENCES chatroom(chatroom_id),
-    message VARCHAR(1000),
+    content VARCHAR(1000),
     deadline DATETIME,
     staff INTEGER(11) NOT NULL REFERENCES user(user_id),
     is_finished TINYINT(1) DEFAULT 0 NOT NULL,
@@ -53,5 +53,5 @@ CREATE TABLE tasks (
     author_id INTEGER(11) NOT NULL REFERENCES user(user_id),
     changer_id INTEGER(11) NOT NULL REFERENCES user(user_id),
     created_at DATETIME NOT NULL,
-    modified_at DATETIME NOT NULL,
+    modified_at DATETIME NOT NULL
 )
