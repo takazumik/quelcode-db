@@ -1,5 +1,5 @@
-CREATE TABLE user (
-    user_id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE users (
+    user_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
     mailaddress VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
@@ -11,12 +11,12 @@ CREATE TABLE user (
     modified_at DATETIME NOT NULL
 )
 
-CREATE TABLE chatroom (
-    chatroom_id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE chatrooms (
+    chatroom_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
     chatroom_name VARCHAR(100) NOT NULL,
     overview VARCHAR(1000),
-    file_flag TINYINT(1) DEFAULT 0,
-    dilect_flag TINYINT(1) DEFAULT 0,
+    is_valid TINYINT(1) DEFAULT 1 NOT NULL,
+    is_direct TINYINT(1) DEFAULT 0 NOT NULL,
     is_deleted TINYINT(1) DEFAULT 0 NOT NULL,
     created_at DATETIME NOT NULL,
     modified_at DATETIME NOT NULL,
@@ -24,14 +24,14 @@ CREATE TABLE chatroom (
     changer_id INTEGER(11) NOT NULL REFERENCES user(user_id)
 )
 
-CREATE TABLE participant (
-    chatroom_id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT REFERENCES chatroom(chatroom_id),
-    user_id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT REFERENCES user(user_id),
+CREATE TABLE users_chatrooms (
+    chatroom_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT REFERENCES chatroom(chatroom_id),
+    user_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT REFERENCES user(user_id),
     participate_at DATETIME NOT NULL
 )
 
-CREATE TABLE chat (
-    chat_id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE chats (
+    chat_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
     chatroom_id INTEGER(11) NOT NULL REFERENCES chatroom(chatroom_id),
     message VARCHAR(1000),
     file_name VARCHAR(100),
@@ -42,8 +42,8 @@ CREATE TABLE chat (
     changer_id INTEGER(11) NOT NULL REFERENCES user(user_id)
 )
 
-CREATE TABLE task (
-    task_id INTEGER(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE tasks (
+    task_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
     chatroom_id INTEGER(11) NOT NULL REFERENCES chatroom(chatroom_id),
     message VARCHAR(1000),
     deadline DATETIME,
