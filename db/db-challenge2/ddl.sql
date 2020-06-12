@@ -4,7 +4,7 @@ CREATE TABLE user (
     mailaddress VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
     introduction VARCHAR(1000),
-    mobile_phone CHAR(13),
+    mobile_phone CHAR(13) UNIQUE,
     business_phone CHAR(13),
     is_deleted TINYINT(1) DEFAULT 0,
     created_at DATETIME NOT NULL,
