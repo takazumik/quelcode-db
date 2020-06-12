@@ -1,3 +1,5 @@
+BEGIN;
+
 CREATE TABLE users (
     user_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(100) NOT NULL,
@@ -9,7 +11,7 @@ CREATE TABLE users (
     is_deleted TINYINT(1) DEFAULT 0 NOT NULL,
     created_at DATETIME NOT NULL,
     modified_at DATETIME NOT NULL
-)
+);
 
 CREATE TABLE chatrooms (
     chatroom_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
@@ -22,13 +24,14 @@ CREATE TABLE chatrooms (
     changer_id INTEGER(11) NOT NULL REFERENCES user(user_id),
     created_at DATETIME NOT NULL,
     modified_at DATETIME NOT NULL
-)
+);
 
 CREATE TABLE users_chatrooms (
-    chatroom_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT REFERENCES chatroom(chatroom_id),
-    user_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT REFERENCES user(user_id),
-    participate_at DATETIME NOT NULL
-)
+    chatroom_id INTEGER(11) REFERENCES chatroom(chatroom_id),
+    user_id INTEGER(11) REFERENCES user(user_id),
+    participate_at DATETIME NOT NULL,
+    PRIMARY KEY (chatroom_id, user_id)
+);
 
 CREATE TABLE chats (
     chat_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
@@ -40,7 +43,7 @@ CREATE TABLE chats (
     changer_id INTEGER(11) NOT NULL REFERENCES user(user_id),
     created_at DATETIME NOT NULL,
     modified_at DATETIME NOT NULL
-)
+);
 
 CREATE TABLE tasks (
     task_id INTEGER(11) PRIMARY KEY AUTO_INCREMENT,
@@ -54,4 +57,6 @@ CREATE TABLE tasks (
     changer_id INTEGER(11) NOT NULL REFERENCES user(user_id),
     created_at DATETIME NOT NULL,
     modified_at DATETIME NOT NULL
-)
+);
+
+COMMIT;
