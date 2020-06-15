@@ -1,4 +1,4 @@
-SELECT username, MAX(C.created_at), chatroom_name
+SELECT user_name, MAX(C.created_at), chatroom_name
 FROM chatrooms AS CR
 GROUP BY chatroom_name
 LEFT JOIN chats AS C

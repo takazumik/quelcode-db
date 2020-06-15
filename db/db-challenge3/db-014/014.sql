@@ -1,5 +1,5 @@
 BEGIN;
-DELETE FROM users_chatrooms
+DELETE FROM participation
 WHERE user_id = (
     SELECT user_id
     FROM users
