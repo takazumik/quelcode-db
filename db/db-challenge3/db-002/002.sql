@@ -1,3 +1,4 @@
+BEGIN;
 
 INSERT INTO chatrooms (
     chatroom_id, chatroom_name,overview, file_is_valid, is_direct, is_deleted,author_id, created_at, changer_id, modified_at

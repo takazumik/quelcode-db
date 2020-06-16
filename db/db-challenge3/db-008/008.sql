@@ -1,8 +1,8 @@
-SELECT user_name, chatroom_name, participate_at
-FROM users AS U
-LEFT JOIN participation AS UC
-ON U.user_id = UC.user_id
+SELECT C.chatroom_name, U.user_name, CAST(P.participated_at AS DATE)
+FROM participation AS P
+LEFT JOIN users AS U
+ON P.user_id = U.user_id
 LEFT JOIN chatrooms AS C
-ON UC.chatroom_id = C.chatroom_id
+ON P.chatroom_id = C.chatroom_id
 WHERE U.is_deleted = 0 AND C.is_deleted = 0 
-ORDER BY participated_atASC
+ORDER BY participated_at ASC
