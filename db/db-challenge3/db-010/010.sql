@@ -12,8 +12,8 @@ JOIN (
         ON C2.author_id = U2.user_id
     WHERE U2.is_deleted = 0 AND C2.is_deleted = 0
     GROUP BY C2.chatroom_id
-) AS NEW
-ON CR.chatroom_id = NEW.chatroom_id AND C.created_at = NEW.ca
+) AS CREATED_AT
+ON CR.chatroom_id = CREATED_AT.chatroom_id AND C.created_at = CREATED_AT.ca
 WHERE C. is_deleted = 0 
 
 
@@ -31,6 +31,6 @@ JOIN (
         ON C2.author_id = U2.user_id
     WHERE U2.is_deleted = 0 AND C2.is_deleted = 0
     GROUP BY C2.chatroom_id
-) AS NEW
-ON CR.chatroom_id = NEW.chatroom_id 
-WHERE C. is_deleted = 0 AND C.created_at = NEW.ca
+) AS CREATED_AT
+ON CR.chatroom_id = CREATED_AT.chatroom_id 
+WHERE C. is_deleted = 0 AND C.created_at = CREATED_AT.ca
